@@ -7,6 +7,7 @@
 from flask import Flask, request, jsonify
 from similarity import compute_similarity
 from model import detect_paraphrase
+import os
 
 app = Flask(__name__)
 
@@ -27,8 +28,6 @@ def paraphrase_api():
         "paraphrase": result
     })
 
-import os
-
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))  # Get port from environment variable
+    port = int(os.environ.get("PORT", 5000))  # Use Render-assigned port, default to 5000 for local testing
     app.run(host='0.0.0.0', port=port, debug=True)
