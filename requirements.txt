@@ -1,0 +1,11 @@
+flask
+streamlit
+torch
+transformers
+scikit-learn
+nltk
+spacy
+tensorflow_hub
+sentence-transformers
+requests
+gunicorn
