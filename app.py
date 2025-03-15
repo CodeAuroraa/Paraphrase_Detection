@@ -27,7 +27,8 @@ def paraphrase_api():
         "paraphrase": result
     })
 
+import os
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=10000)  # Render requires a specified port
-
-
+    port = int(os.environ.get("PORT", 5000))  # Get port from environment variable
+    app.run(host='0.0.0.0', port=port, debug=True)
